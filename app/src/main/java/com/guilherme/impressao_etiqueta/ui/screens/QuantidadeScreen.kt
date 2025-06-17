@@ -33,7 +33,7 @@ fun QuantidadeScreen(navController: NavHostController,     viewModel: EtiquetaVi
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
         ) {
-            Text("1 KG")
+            Text("1 kg")
         }
 
         Button(
@@ -42,7 +42,7 @@ fun QuantidadeScreen(navController: NavHostController,     viewModel: EtiquetaVi
                 navController.navigate("tamanho") },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text("2 KG")
+            Text("2 kg")
         }
     }
 }

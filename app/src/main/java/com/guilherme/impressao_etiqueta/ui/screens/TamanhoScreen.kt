@@ -27,22 +27,22 @@ fun TamanhoScreen(navController: NavHostController,     viewModel: EtiquetaViewM
     ) {
         Button(
             onClick = {
-                viewModel.tamanho.value = "10 x 15"
+                viewModel.tamanho.value = "10x15"
                 navController.navigate("imprimir") },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
         ) {
-            Text("10 x 15")
+            Text("10x15")
         }
 
         Button(
             onClick = {
-                viewModel.material.value = "20 x 30"
+                viewModel.tamanho.value = "20x30"
                 navController.navigate("imprimir") },
             modifier = Modifier.fillMaxWidth()
         ) {
-            Text("20 x 30")
+            Text("20x30")
         }
     }
 }

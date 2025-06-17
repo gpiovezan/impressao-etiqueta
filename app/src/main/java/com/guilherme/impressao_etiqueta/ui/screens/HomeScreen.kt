@@ -32,7 +32,7 @@ fun HomeScreen(navController: NavHostController) {
         }
 
         Button(
-            onClick = { navController.navigate("repetir_etiqueta") },
+            onClick = {navController.navigate("imprimir") },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Repetir Etiqueta Anterior")
