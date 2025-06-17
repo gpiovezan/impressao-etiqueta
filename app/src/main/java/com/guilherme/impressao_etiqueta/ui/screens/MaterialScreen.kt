@@ -13,9 +13,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.guilherme.impressao_etiqueta.viewmodel.EtiquetaViewModel
 
 @Composable
-fun MaterialScreen(navController: NavHostController) {
+fun MaterialScreen(navController: NavHostController,    viewModel: EtiquetaViewModel
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -24,7 +26,9 @@ fun MaterialScreen(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(
-            onClick = { navController.navigate("tipo") },
+            onClick = {
+                viewModel.material.value = "PE"
+                navController.navigate("tipo") },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
@@ -33,7 +37,9 @@ fun MaterialScreen(navController: NavHostController) {
         }
 
         Button(
-            onClick = { navController.navigate("tipo") },
+            onClick = {
+                viewModel.material.value = "PP"
+                navController.navigate("tipo") },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("PP")

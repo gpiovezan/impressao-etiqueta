@@ -13,9 +13,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.guilherme.impressao_etiqueta.viewmodel.EtiquetaViewModel
 
 @Composable
-fun TamanhoScreen(navController: NavHostController) {
+fun TamanhoScreen(navController: NavHostController,     viewModel: EtiquetaViewModel
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -24,7 +26,9 @@ fun TamanhoScreen(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(
-            onClick = { navController.navigate("imprimir") },
+            onClick = {
+                viewModel.tamanho.value = "10 x 15"
+                navController.navigate("imprimir") },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
@@ -33,7 +37,9 @@ fun TamanhoScreen(navController: NavHostController) {
         }
 
         Button(
-            onClick = { navController.navigate("imprimir") },
+            onClick = {
+                viewModel.material.value = "20 x 30"
+                navController.navigate("imprimir") },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("20 x 30")

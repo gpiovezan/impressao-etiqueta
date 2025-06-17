@@ -14,8 +14,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 
+import com.guilherme.impressao_etiqueta.viewmodel.EtiquetaViewModel
+
 @Composable
-fun ProdutoScreen(navController: NavHostController) {
+fun ProdutoScreen(
+    navController: NavHostController,
+    viewModel: EtiquetaViewModel
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -24,7 +29,10 @@ fun ProdutoScreen(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(
-            onClick = { navController.navigate("material") },
+            onClick = {
+                viewModel.produto.value = "Saco Plástico"
+                navController.navigate("material")
+            },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
@@ -33,10 +41,14 @@ fun ProdutoScreen(navController: NavHostController) {
         }
 
         Button(
-            onClick = { navController.navigate("material") },
+            onClick = {
+                viewModel.produto.value = "Sacolinha"
+                navController.navigate("material")
+            },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Sacolinha")
         }
     }
 }
+

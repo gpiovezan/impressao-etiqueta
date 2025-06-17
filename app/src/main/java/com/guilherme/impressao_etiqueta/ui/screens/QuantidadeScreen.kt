@@ -13,9 +13,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.guilherme.impressao_etiqueta.viewmodel.EtiquetaViewModel
 
 @Composable
-fun QuantidadeScreen(navController: NavHostController) {
+fun QuantidadeScreen(navController: NavHostController,     viewModel: EtiquetaViewModel
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -24,7 +26,9 @@ fun QuantidadeScreen(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(
-            onClick = { navController.navigate("tamanho") },
+            onClick = {
+                viewModel.quantidade.value = "1 KG"
+                navController.navigate("tamanho") },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
@@ -33,7 +37,9 @@ fun QuantidadeScreen(navController: NavHostController) {
         }
 
         Button(
-            onClick = { navController.navigate("tamanho") },
+            onClick = {
+                viewModel.quantidade.value = "2 KG"
+                navController.navigate("tamanho") },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("2 KG")

@@ -13,9 +13,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
+import com.guilherme.impressao_etiqueta.viewmodel.EtiquetaViewModel
 
 @Composable
-fun TipoScreen(navController: NavHostController) {
+fun TipoScreen(navController: NavHostController,     viewModel: EtiquetaViewModel
+) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -24,7 +26,9 @@ fun TipoScreen(navController: NavHostController) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Button(
-            onClick = { navController.navigate("quantidade") },
+            onClick = {
+                viewModel.tipo.value = "Leitoso"
+                navController.navigate("quantidade") },
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(bottom = 16.dp)
@@ -33,7 +37,9 @@ fun TipoScreen(navController: NavHostController) {
         }
 
         Button(
-            onClick = { navController.navigate("quantidade") },
+            onClick = {
+                viewModel.tipo.value = "Transparente"
+                navController.navigate("quantidade") },
             modifier = Modifier.fillMaxWidth()
         ) {
             Text("Transparente")

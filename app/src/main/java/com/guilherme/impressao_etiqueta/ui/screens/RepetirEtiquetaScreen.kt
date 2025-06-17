@@ -7,9 +7,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
+import com.guilherme.impressao_etiqueta.viewmodel.EtiquetaViewModel
 
 @Composable
-fun RepetirEtiquetaScreen(navController: NavHostController) {
+fun RepetirEtiquetaScreen(navController: NavHostController,     viewModel: EtiquetaViewModel
+) {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center
